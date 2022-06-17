@@ -2,7 +2,8 @@ require 'application_system_test_case'
 
 class QuotesTest < ApplicationSystemTestCase
   setup do
-    @quote = quotes(:first)
+    # We need to order quote as well in the system tests
+    @quote = Quote.ordered.first
   end
 
   test 'Showing a quote' do
